@@ -140,7 +140,7 @@ const AppSwitcher: React.FC = () => {
           aria-label="Main navigation"
         >
           <div className="flex items-center h-11 px-2 gap-2">
-            <Link href="/">
+            <a href="/">
               <button 
                 className={cn(
                   "p-1.5 rounded-full transition-colors flex items-center gap-2",
@@ -154,7 +154,7 @@ const AppSwitcher: React.FC = () => {
                 <LogoIcon className="w-5 h-5" />
                 <span className="font-medium text-sm">Epigram</span>
               </button>
-            </Link>
+            </a>
 
             <Link href="/topics">
               <button 
