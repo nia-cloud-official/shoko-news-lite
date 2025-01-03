@@ -140,20 +140,18 @@ const AppSwitcher: React.FC = () => {
           aria-label="Main navigation"
         >
           <div className="flex items-center h-11 px-2 gap-2">
-            <a href="/">
-              <button 
-                className={cn(
-                  "p-1.5 rounded-full transition-colors flex items-center gap-2",
-                  isHomePage 
-                    ? "bg-primary text-primary-foreground" 
-                    : "hover:bg-gray-100 dark:hover:bg-muted"
-                )}
-                aria-label="Go to Epigram"
-                aria-current={isHomePage ? "page" : undefined}
-              >
-                <LogoIcon className="w-5 h-5" />
-                <span className="font-medium text-sm">Epigram</span>
-              </button>
+            <a 
+              href="/" 
+              className={cn(
+                "p-1.5 rounded-full transition-colors flex items-center gap-2",
+                isHomePage && "bg-primary text-primary-foreground",
+                !isHomePage && "hover:bg-gray-100 dark:hover:bg-muted"
+              )}
+              aria-label="Go to Epigram"
+              aria-current={isHomePage ? "page" : undefined}
+            >
+              <LogoIcon className="w-5 h-5" />
+              <span className="font-medium text-sm">Epigram</span>
             </a>
 
             <Link href="/topics">
