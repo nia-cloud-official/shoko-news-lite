@@ -10,7 +10,7 @@ Our goal is to use AI to make quality news easy to access, understand, and perso
 - **AI-powered Summaries**: Get concise news summaries and in-depth analysis.
 - **Trusted Sources**: Access news from reputable sources worldwide.
 - **User-friendly Interface**: Enjoy a sleek, intuitive interface designed for a seamless reading experience.
-- **Responsive Design**: Access Epigram on any device, anywhere, anytime.
+- **Responsive Design**: Access Epigram on any device, anywhere, anytime. If you are using Safari, you can even add it to your home screen and use it just like an app.
 - **AI Deep dive**: Get in-depth analysis of news articles using AI.
 
 ## Tech Stack
