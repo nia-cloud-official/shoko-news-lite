@@ -207,7 +207,7 @@ export function SwipeCard({
           {/* Content Section */}
           <div className="flex flex-col flex-1 overflow-hidden">
             <CardContent className="flex-grow py-6 px-6 relative -mt-2 overflow-y-auto pointer-events-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <p className="text-sm leading-normal text-gray-700 dark:text-gray-300 tracking-normal">
+              <p className="text-sm leading-normal text-gray-700 dark:text-gray-300 tracking-normal select-none">
                 <time dateTime={date} className="font-medium">
                   {new Date(date).toLocaleDateString("en-US", {
                     month: "short",
