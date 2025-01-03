@@ -1,0 +1,24 @@
+{
+  "name": "Epigram",
+  "short_name": "Epigram",
+  "description": "AI-powered news in short for busy people",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f7",
+  "theme_color": "#f7f7f7",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/192x192_1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/512x512_1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+} 
