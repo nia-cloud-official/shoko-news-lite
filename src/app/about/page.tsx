@@ -30,7 +30,6 @@ export default function AboutPage() {
       <div className="fixed inset-0 pt-[calc(env(safe-area-inset-top)+1rem)] pb-24 px-4 overflow-y-auto">
         <div className="relative w-full max-w-[400px] mx-auto">
           <div className="space-y-8 pb-4">
-            {/* Header */}
             <div className="space-y-2">
               <h1 className="text-2xl font-semibold tracking-tight">
                 About Epigram
