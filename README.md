@@ -121,9 +121,10 @@ Our goal is to use AI to make quality news easy to access, understand, and perso
 > **Note**: Set up a cron job to periodically hit `/api/news/populate` for fresh news content.
 
 Deploy to any platform supporting Next.js:
-- [Vercel](https://vercel.com)
-- [Netlify](https://netlify.com)
-- [Google Cloud Run](https://cloud.google.com/run)
+- [Vercel](https://vercel.com?utm_source=github&utm_medium=epigram)
+- [Netlify](https://netlify.com?utm_source=github&utm_medium=epigram)
+- [Google Cloud Run](https://cloud.google.com/run?utm_source=github&utm_medium=epigram)
+- [AWS Amplify](https://aws.amazon.com/amplify?utm_source=github&utm_medium=epigram)
 
 ## 🤝 Contributing
 
