@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title:
-    "Epigram: Open-Source, Free, and AI-Powered News in Short. Unbiased news for busy people.",
+    "Epigram: Open-Source, Free, and AI-Powered News in Short.",
   description:
     "An open-source, AI-powered news app for busy people. Stay updated with bite-sized news, real-time updates, and in-depth analysis. Experience balanced, trustworthy reporting tailored for fast-paced lifestyles in a sleek, user-friendly interface.",
   manifest: "/manifest.json",
