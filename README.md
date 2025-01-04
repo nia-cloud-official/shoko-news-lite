@@ -4,6 +4,7 @@
 
 # Epigram
 
+[![Announcement](https://img.shields.io/badge/X-Announcement-black)](https://x.com/Sandeepg33k/status/1875373269307814113)
 [![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](/LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/panda-sandeep/epigram/pulls)
 
