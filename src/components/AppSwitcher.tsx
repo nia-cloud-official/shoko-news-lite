@@ -156,6 +156,7 @@ const AppSwitcher: React.FC = () => {
           aria-label="Main navigation"
         >
           <div className="flex items-center h-11 px-2 gap-2">
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a
               href="/"
               className={cn(
@@ -207,47 +208,53 @@ const AppSwitcher: React.FC = () => {
                     >
                       <DropdownMenuItem
                         className={cn(
-                          "h-9 focus:bg-accent cursor-pointer",
-                          theme === "light" && "bg-accent"
+                          "flex items-center gap-3 h-10 focus:bg-accent/50 cursor-pointer transition-colors",
+                          theme === "light" && "bg-accent/50"
                         )}
                         onClick={() => setTheme("light")}
                         role="menuitemradio"
                         aria-checked={theme === "light"}
                       >
-                        <Sun className="mr-2 h-4 w-4" aria-hidden="true" />
-                        <span className="flex-1">Light</span>
+                        <div className="p-1 rounded-md bg-primary/10">
+                          <Sun className="h-4 w-4 text-primary" aria-hidden="true" />
+                        </div>
+                        <span className="flex-1 font-medium">Light</span>
                         {theme === "light" && (
-                          <Check className="h-4 w-4" aria-hidden="true" />
+                          <Check className="h-4 w-4 text-primary" aria-hidden="true" />
                         )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
-                          "h-9 focus:bg-accent cursor-pointer",
-                          theme === "dark" && "bg-accent"
+                          "flex items-center gap-3 h-10 focus:bg-accent/50 cursor-pointer transition-colors",
+                          theme === "dark" && "bg-accent/50"
                         )}
                         onClick={() => setTheme("dark")}
                         role="menuitemradio"
                         aria-checked={theme === "dark"}
                       >
-                        <Moon className="mr-2 h-4 w-4" aria-hidden="true" />
-                        <span className="flex-1">Dark</span>
+                        <div className="p-1 rounded-md bg-primary/10">
+                          <Moon className="h-4 w-4 text-primary" aria-hidden="true" />
+                        </div>
+                        <span className="flex-1 font-medium">Dark</span>
                         {theme === "dark" && (
-                          <Check className="h-4 w-4" aria-hidden="true" />
+                          <Check className="h-4 w-4 text-primary" aria-hidden="true" />
                         )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
-                          "h-9 focus:bg-accent cursor-pointer",
-                          theme === "system" && "bg-accent"
+                          "flex items-center gap-3 h-10 focus:bg-accent/50 cursor-pointer transition-colors",
+                          theme === "system" && "bg-accent/50"
                         )}
                         onClick={() => setTheme("system")}
                         role="menuitemradio"
                         aria-checked={theme === "system"}
                       >
-                        <Monitor className="mr-2 h-4 w-4" aria-hidden="true" />
-                        <span className="flex-1">System</span>
+                        <div className="p-1 rounded-md bg-primary/10">
+                          <Monitor className="h-4 w-4 text-primary" aria-hidden="true" />
+                        </div>
+                        <span className="flex-1 font-medium">System</span>
                         {theme === "system" && (
-                          <Check className="h-4 w-4" aria-hidden="true" />
+                          <Check className="h-4 w-4 text-primary" aria-hidden="true" />
                         )}
                       </DropdownMenuItem>
                       <div className="h-px bg-border my-1" />
