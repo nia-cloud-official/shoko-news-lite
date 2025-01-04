@@ -78,7 +78,7 @@ export default function AboutPage() {
                   transparency and community-driven development.
                 </p>
                 <a
-                  href="https://github.com/hashnode-labs/epigram/"
+                  href="https://github.com/panda-sandeep/epigram"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-primary hover:underline"

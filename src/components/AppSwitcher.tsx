@@ -87,7 +87,7 @@ const AppSwitcher: React.FC = () => {
     <>
       {showWelcome && isHomePage && (
         <>
-          <div 
+          <div
             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-10"
             onClick={dismissWelcome}
             aria-hidden="true"
@@ -108,7 +108,10 @@ const AppSwitcher: React.FC = () => {
                     <h3 className="font-semibold">Welcome to Epigram!</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    Your open-source, AI-powered news companion that redefines how you consume news. Get bite-sized summaries from trusted sources worldwide, personalized to your interests. Stay informed without the overwhelm.
+                    Your open-source, AI-powered news companion that redefines
+                    how you consume news. Get bite-sized summaries from trusted
+                    sources worldwide, personalized to your interests. Stay
+                    informed without the overwhelm.
                   </p>
                   <div className="flex items-center gap-2 text-sm">
                     <button
@@ -140,28 +143,26 @@ const AppSwitcher: React.FC = () => {
           aria-label="Main navigation"
         >
           <div className="flex items-center h-11 px-2 gap-2">
-            <a href="/">
-              <button 
-                className={cn(
-                  "p-1.5 rounded-full transition-colors flex items-center gap-2",
-                  isHomePage 
-                    ? "bg-primary text-primary-foreground" 
-                    : "hover:bg-gray-100 dark:hover:bg-muted"
-                )}
-                aria-label="Go to Epigram"
-                aria-current={isHomePage ? "page" : undefined}
-              >
-                <LogoIcon className="w-5 h-5" />
-                <span className="font-medium text-sm">Epigram</span>
-              </button>
+            <a
+              href="/"
+              className={cn(
+                "p-1.5 rounded-full transition-colors flex items-center gap-2",
+                isHomePage && "bg-primary text-primary-foreground",
+                !isHomePage && "hover:bg-gray-100 dark:hover:bg-muted"
+              )}
+              aria-label="Go to Epigram"
+              aria-current={isHomePage ? "page" : undefined}
+            >
+              <LogoIcon className="w-5 h-5" />
+              <span className="font-medium text-sm">Epigram</span>
             </a>
 
             <Link href="/topics">
-              <button 
+              <button
                 className={cn(
                   "p-1.5 rounded-full transition-colors flex items-center gap-2",
-                  isTopicsPage 
-                    ? "bg-primary text-primary-foreground" 
+                  isTopicsPage
+                    ? "bg-primary text-primary-foreground"
                     : "hover:bg-gray-100 dark:hover:bg-muted"
                 )}
                 aria-label="Go to topics page"
@@ -177,7 +178,7 @@ const AppSwitcher: React.FC = () => {
                 <TooltipTrigger asChild>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button 
+                      <button
                         className="p-1.5 hover:bg-gray-100 dark:hover:bg-muted rounded-full transition-colors"
                         aria-label="Change theme"
                       >
@@ -185,7 +186,12 @@ const AppSwitcher: React.FC = () => {
                         <Moon className="w-5 h-5 hidden dark:block" />
                       </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-56" role="menu" aria-label="Theme options">
+                    <DropdownMenuContent
+                      align="end"
+                      className="w-56"
+                      role="menu"
+                      aria-label="Theme options"
+                    >
                       <DropdownMenuItem
                         className={cn(
                           "h-9 focus:bg-accent cursor-pointer",
@@ -197,7 +203,9 @@ const AppSwitcher: React.FC = () => {
                       >
                         <Sun className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Light</span>
-                        {theme === "light" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "light" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -210,7 +218,9 @@ const AppSwitcher: React.FC = () => {
                       >
                         <Moon className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Dark</span>
-                        {theme === "dark" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "dark" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -223,7 +233,9 @@ const AppSwitcher: React.FC = () => {
                       >
                         <Monitor className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">System</span>
-                        {theme === "system" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "system" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <div className="h-px bg-border my-1" />
                       <DropdownMenuItem
@@ -238,7 +250,9 @@ const AppSwitcher: React.FC = () => {
                         <Scroll className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Sepia</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#F4ECD8]" />
-                        {theme === "sepia" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "sepia" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -252,7 +266,9 @@ const AppSwitcher: React.FC = () => {
                         <Eye className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">High Contrast</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#000000]" />
-                        {theme === "high-contrast" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "high-contrast" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -266,7 +282,9 @@ const AppSwitcher: React.FC = () => {
                         <Leaf className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Forest</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#2D4F1E]" />
-                        {theme === "forest" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "forest" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -280,7 +298,9 @@ const AppSwitcher: React.FC = () => {
                         <Waves className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Ocean</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#0C4A6E]" />
-                        {theme === "ocean" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "ocean" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -294,7 +314,9 @@ const AppSwitcher: React.FC = () => {
                         <Sparkles className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Aurora Borealis</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#064E3B]" />
-                        {theme === "aurora" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "aurora" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -308,7 +330,9 @@ const AppSwitcher: React.FC = () => {
                         <Flame className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Volcanic Ember</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#7F1D1D]" />
-                        {theme === "volcanic" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "volcanic" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -322,7 +346,9 @@ const AppSwitcher: React.FC = () => {
                         <Star className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Violet Cosmos</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#4C1D95]" />
-                        {theme === "cosmos" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "cosmos" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -336,7 +362,9 @@ const AppSwitcher: React.FC = () => {
                         <TreePalm className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Desert Sand</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#C2B280]" />
-                        {theme === "desert" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "desert" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                       <DropdownMenuItem
                         className={cn(
@@ -350,7 +378,9 @@ const AppSwitcher: React.FC = () => {
                         <Flower2 className="mr-2 h-4 w-4" aria-hidden="true" />
                         <span className="flex-1">Rose Garden</span>
                         <div className="w-4 h-4 rounded-sm mr-2 bg-[#C9184A]" />
-                        {theme === "rose" && <Check className="h-4 w-4" aria-hidden="true" />}
+                        {theme === "rose" && (
+                          <Check className="h-4 w-4" aria-hidden="true" />
+                        )}
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -364,16 +394,21 @@ const AppSwitcher: React.FC = () => {
                 <TooltipTrigger asChild>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button 
+                      <button
                         className="p-1.5 hover:bg-gray-100 dark:hover:bg-muted rounded-full transition-colors"
                         aria-label="More options"
                       >
                         <Menu className="w-5 h-5" />
                       </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="w-56" role="menu" aria-label="More options">
+                    <DropdownMenuContent
+                      align="end"
+                      className="w-56"
+                      role="menu"
+                      aria-label="More options"
+                    >
                       <Link href="/about">
-                        <DropdownMenuItem 
+                        <DropdownMenuItem
                           className={cn(
                             "h-9 focus:bg-accent cursor-pointer",
                             isAboutPage && "bg-accent"
@@ -381,11 +416,13 @@ const AppSwitcher: React.FC = () => {
                         >
                           <Info className="mr-2 h-4 w-4" aria-hidden="true" />
                           <span className="flex-1">About</span>
-                          {isAboutPage && <Check className="h-4 w-4" aria-hidden="true" />}
+                          {isAboutPage && (
+                            <Check className="h-4 w-4" aria-hidden="true" />
+                          )}
                         </DropdownMenuItem>
                       </Link>
-                      <a 
-                        href="https://github.com/hashnode-labs/epigram/"
+                      <a
+                        href="https://github.com/panda-sandeep/epigram"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -394,7 +431,7 @@ const AppSwitcher: React.FC = () => {
                           <span className="flex-1">Contribute and fork</span>
                         </DropdownMenuItem>
                       </a>
-                      <DropdownMenuItem 
+                      <DropdownMenuItem
                         className="h-9 focus:bg-accent cursor-pointer"
                         onClick={() => setIsShareOpen(true)}
                       >
@@ -439,15 +476,12 @@ const AppSwitcher: React.FC = () => {
                   size="icon"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.open(link.url, '_blank', 'width=550,height=435');
+                    window.open(link.url, "_blank", "width=550,height=435");
                   }}
-                  className={cn(
-                    "rounded-full transition-colors",
-                    link.color
-                  )}
+                  className={cn("rounded-full transition-colors", link.color)}
                   aria-label={link.name}
                 >
-                  {typeof link.icon === 'string' ? (
+                  {typeof link.icon === "string" ? (
                     <span className="text-2xl">{link.icon}</span>
                   ) : (
                     link.icon
@@ -463,7 +497,9 @@ const AppSwitcher: React.FC = () => {
         <DialogContent className="sm:max-w-[600px] left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] -mt-24 w-[calc(100%-2rem)] p-0 bg-background/80 backdrop-blur-xl border shadow-lg rounded-xl overflow-hidden absolute">
           <div className="p-6 space-y-6">
             <DialogHeader>
-              <DialogTitle className="text-2xl font-semibold tracking-tight">Search Epigram</DialogTitle>
+              <DialogTitle className="text-2xl font-semibold tracking-tight">
+                Search Epigram
+              </DialogTitle>
             </DialogHeader>
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
