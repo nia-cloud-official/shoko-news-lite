@@ -4,7 +4,7 @@
 
 # Epigram
 
-[![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](blob/main/LICENSE.md)
+[![License](https://img.shields.io/badge/license-AGPL--3.0-blue)](/LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/panda-sandeep/epigram/pulls)
 
 Open-Source, Free, and AI-Powered News in Short.
@@ -143,7 +143,7 @@ You can also:
 
 ## 📝 License
 
-This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0) - see the [LICENSE.md](blob/main/LICENSE.md) file for details.
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0) - see the [LICENSE.md](/LICENSE.md) file for details.
 
 ---
 
