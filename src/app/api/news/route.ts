@@ -11,7 +11,7 @@ const getUniqueArticlesBy = <K extends keyof NewsArticle>(arr: NewsArticle[], ke
 
 export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
-    const categories = searchParams.get("categories") || "technology,science";
+    const categories = searchParams.get("categories") || "technology,science,health";
     const categoryList = categories.split(',');
 
     const newsArticles: NewsArticle[] = [];
