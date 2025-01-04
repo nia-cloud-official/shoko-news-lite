@@ -1,9 +1,13 @@
 import { Metadata } from "next"
 import AppSwitcher from "@/components/AppSwitcher";
 import { LogoIcon } from "@/components/logo-icon";
-import { Globe2, Newspaper, Sparkles, Zap, Brain, BookOpen, Github, Cpu, Palette, Box, Cloud } from "lucide-react";
+import { Globe2, Newspaper, Sparkles, Zap, Brain, BookOpen, Github, Box, CircuitBoard } from "lucide-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { XIcon } from "@/components/icons/x-icon";
+import { NextJsIcon } from "@/components/icons/nextjs-icon";
+import { TailwindIcon } from "@/components/icons/tailwind-icon";
+import { GoogleCloudIcon } from "@/components/icons/google-cloud-icon";
+import { UpstashIcon } from "@/components/icons/upstash-icon";
 
 export const metadata: Metadata = {
   title: 'About Epigram - AI-powered News Platform',
@@ -142,56 +146,92 @@ export default function AboutPage() {
               {/* Technology Stack */}
               <div>
                 <h2 className="text-lg font-medium mb-4">Technology Stack</h2>
-                <div className="grid gap-4">
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Cpu className="w-5 h-5 text-primary" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <NextJsIcon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Next.js</h3>
+                        <p className="text-sm text-muted-foreground">
+                          <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            nextjs.org
+                          </a>
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-medium">Next.js</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Built with the React framework for production, providing
-                        server-side rendering and optimal performance.
-                      </p>
+
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <TailwindIcon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">TailwindCSS</h3>
+                        <p className="text-sm text-muted-foreground">
+                          <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            tailwindcss.com
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <Box className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">shadcn/ui</h3>
+                        <p className="text-sm text-muted-foreground">
+                          <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            ui.shadcn.com
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Palette className="w-5 h-5 text-primary" />
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <CircuitBoard className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Exa</h3>
+                        <p className="text-sm text-muted-foreground">
+                          <a href="https://exa.ai" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            exa.ai
+                          </a>
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-medium">TailwindCSS & shadcn/ui</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Styled with TailwindCSS for utility-first CSS and
-                        shadcn/ui for beautiful, accessible components.
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Box className="w-5 h-5 text-primary" />
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <GoogleCloudIcon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Google Cloud Run</h3>
+                        <p className="text-sm text-muted-foreground">
+                          <a href="https://cloud.google.com/run" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            cloud.google.com/run
+                          </a>
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-medium">Exa</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Powered by Exa for advanced AI capabilities and natural
-                        language processing.
-                      </p>
-                    </div>
-                  </div>
 
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Cloud className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Google Cloud Run</h3>
-                      <p className="text-sm text-muted-foreground">
-                        Deployed on Google Cloud Run for scalable, serverless
-                        container execution.
-                      </p>
+                    <div className="flex items-start gap-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <UpstashIcon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium">Upstash</h3>
+                        <p className="text-sm text-muted-foreground">
+                          <a href="https://upstash.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            upstash.com
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
