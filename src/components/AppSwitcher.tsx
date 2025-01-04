@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { 
@@ -23,6 +23,47 @@ import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+
+const SHARE_URL = 'https://epigram.news';
+const SHARE_TEXT = "Epigram - An open-source, free, and AI-powered news in short app.";
+
+const SOCIAL_CONFIGS = [
+  {
+    name: 'X (Twitter)',
+    icon: <Twitter className="w-5 h-5" />,
+    urlTemplate: (text: string, url: string) => 
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+    color: 'hover:bg-[#1DA1F2]/10 group-hover:text-[#1DA1F2]'
+  },
+  {
+    name: 'LinkedIn',
+    icon: <Linkedin className="w-5 h-5" />,
+    urlTemplate: (_: string, url: string) => 
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+    color: 'hover:bg-[#0A66C2]/10 group-hover:text-[#0A66C2]'
+  },
+  {
+    name: 'Facebook',
+    icon: <Facebook className="w-5 h-5" />,
+    urlTemplate: (_: string, url: string) => 
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    color: 'hover:bg-[#1877F2]/10 group-hover:text-[#1877F2]'
+  },
+  {
+    name: 'WhatsApp',
+    icon: <WhatsAppIcon className="w-5 h-5" />,
+    urlTemplate: (text: string, url: string) => 
+      `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`,
+    color: 'hover:bg-[#25D366]/10 group-hover:text-[#25D366]'
+  },
+  {
+    name: 'Messages',
+    icon: <MessageCircle className="w-5 h-5" />,
+    urlTemplate: (text: string, url: string) => 
+      `sms:&body=${encodeURIComponent(text + ' ' + url)}`,
+    color: 'hover:bg-blue-500/10 group-hover:text-blue-500'
+  }
+] as const;
 
 const AppSwitcher: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -47,41 +88,13 @@ const AppSwitcher: React.FC = () => {
     localStorage.setItem('hasSeenWelcome', 'true');
   };
 
-  const shareUrl = 'https://epigram.news';
-  const shareText = 'Check out Epigram - AI-powered news that matters, delivered your way.';
-
-  const shareLinks = [
-    {
-      name: 'X (Twitter)',
-      icon: <Twitter className="w-5 h-5" />,
-      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
-      color: 'hover:bg-[#1DA1F2]/10 group-hover:text-[#1DA1F2]'
-    },
-    {
-      name: 'LinkedIn',
-      icon: <Linkedin className="w-5 h-5" />,
-      url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-      color: 'hover:bg-[#0A66C2]/10 group-hover:text-[#0A66C2]'
-    },
-    {
-      name: 'Facebook',
-      icon: <Facebook className="w-5 h-5" />,
-      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
-      color: 'hover:bg-[#1877F2]/10 group-hover:text-[#1877F2]'
-    },
-    {
-      name: 'WhatsApp',
-      icon: <WhatsAppIcon className="w-5 h-5" />,
-      url: `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`,
-      color: 'hover:bg-[#25D366]/10 group-hover:text-[#25D366]'
-    },
-    {
-      name: 'Messages',
-      icon: <MessageCircle className="w-5 h-5" />,
-      url: `sms:&body=${encodeURIComponent(shareText + ' ' + shareUrl)}`,
-      color: 'hover:bg-blue-500/10 group-hover:text-blue-500'
-    }
-  ];
+  const shareLinks = useMemo(() => 
+    SOCIAL_CONFIGS.map(config => ({
+      ...config,
+      url: config.urlTemplate(SHARE_TEXT, SHARE_URL)
+    })), 
+    []
+  );
 
   return (
     <>
