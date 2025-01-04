@@ -15,12 +15,12 @@ Our goal is to use AI to make quality news easy to access, understand, and perso
 
 ## Tech Stack
 
-- [Next.js](https://nextjs.org/)
-- [Exa for AI-powered news summaries](https://exa.ai/)
-- [Google Cloud Run](https://cloud.google.com/run?hl=en)
-- [OpenAI `gpt-4o-mini` for AI-powered analysis](https://openai.com/)
-- [Mediastack for news data](https://mediastack.com/documentation)
-- [Upstash for caching and rate limiting](https://upstash.com/)
+- [Next.js](https://nextjs.org/) - framework
+- [Exa](https://exa.ai/) - for AI-powered news summaries
+- [Google Cloud Run](https://cloud.google.com/run?hl=en) - deployment
+- [AI SDK](https://sdk.vercel.ai/docs/introduction) and [OpenAI `gpt-4o-mini`](https://openai.com/) - for AI analysis
+- [Mediastack](https://mediastack.com/documentation) - for news data
+- [Upstash](https://upstash.com/) - for caching and rate limiting
 
 ## Installation
 
@@ -88,4 +88,14 @@ To deploy Epigram, follow these steps:
     ```bash
     npm start
     ```
+Lastly, you should also ensure that you have set a cron job that periodically hits `/api/news/populate` to populate news.
+    
 You can deploy Epigram to any cloud provider that supports Next.js, such as Vercel, Netlify, or Google Cloud Run.
+
+## Contributing
+
+We would contributions! Here's how you can contribute:
+
+- [Open an issue](https://github.com/panda-sandeep/epigram/issues) if you spot a bug.
+- Follow installation instructions to get your local dev environment set up.
+- [Open a PR](https://github.com/panda-sandeep/epigram/pulls) to add new features or fix bugs.
