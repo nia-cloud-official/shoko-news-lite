@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
     }
     for (const topic of topics) {
         const response = await fetch(
-            `https://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API_KEY}&languages=en&categories=${topic}&limit=${process.env.PER_TOPIC_NEWS_LIMIT}`
+            `https://api.mediastack.com/v1/news?access_key=${process.env.MEDIASTACK_API_KEY}&languages=en&countries=us&categories=${topic}&limit=${process.env.PER_TOPIC_NEWS_LIMIT}`
         );
         const data = await response.json();
 
