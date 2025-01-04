@@ -44,7 +44,7 @@ Our goal is to use AI to make quality news easy to access, understand, and perso
 - [Next.js](https://nextjs.org/) - React framework for production
 - [Exa](https://exa.ai/) - AI-powered news summaries
 - [Google Cloud Run](https://cloud.google.com/run) - Serverless deployment
-- [AI SDK](https://sdk.vercel.ai/docs) & [OpenAI](https://openai.com/) - AI analysis with `gpt-4-mini`
+- [AI SDK](https://sdk.vercel.ai/docs) & [OpenAI](https://openai.com/) - AI analysis with `gpt-4o-mini`
 - [Mediastack](https://mediastack.com/) - News data API
 - [Upstash](https://upstash.com/) - Redis for caching and rate limiting
 
