@@ -10,7 +10,7 @@ import { useSwipeable, SwipeEventData } from "react-swipeable";
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { ArrowLeft } from "lucide-react";
+import { StepBack } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -230,7 +230,7 @@ export function SwipeCard({
                   }}
                   className="text-muted-foreground hover:text-foreground"
                 >
-                  <ArrowLeft className="w-4 h-4" />
+                  <StepBack className="w-4 h-4" />
                   Back
                 </Button>
               )}
