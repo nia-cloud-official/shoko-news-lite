@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { IOSHandler } from "@/components/ios-handler";
+import Script from "next/script";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -90,6 +91,18 @@ export default function RootLayout({
         <link rel="apple-touch-startup-image" href="/splash.png" />
         <link rel="apple-touch-icon" sizes="192x192" href="/icons/192x192_1.png" />
         <link rel="apple-touch-icon" sizes="512x512" href="/icons/512x512_1.png" />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+          `}
+        </Script>
       </head>
       <body className="min-h-screen">
         <ThemeProvider
